@@ -1,6 +1,9 @@
 package com.tangmaolin.servicediscovery.model;
 
 /**
+ * Service information model
+ * Represents a service registered with the service registry
+ *
  * @author tangmaolin02
  */
 public class ServiceInfo {

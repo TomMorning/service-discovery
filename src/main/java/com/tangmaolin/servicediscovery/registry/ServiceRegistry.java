@@ -6,6 +6,9 @@ package com.tangmaolin.servicediscovery.registry;
 
 import java.util.List;
 
+/**
+ * Service registry interface
+ */
 public interface ServiceRegistry {
     /**
      * Register a service with the service registry

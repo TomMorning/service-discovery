@@ -1,5 +1,6 @@
 package com.tangmaolin.servicediscovery.scheduler;
 
+
 import com.tangmaolin.servicediscovery.registry.ServiceRegistry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -11,6 +12,9 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * A scheduler that periodically cleans up expired services from the service registry.
+ */
 @Component
 public class ServiceCleanupScheduler {
     private static final long SCHEDULED_CLEANUP_INTERVAL = 5000; // 5 seconds

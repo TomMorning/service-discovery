@@ -17,17 +17,33 @@ public class ServiceController {
     @Qualifier("inMemoryServiceRegistry")
     private ServiceRegistry serviceRegistry;
 
+    /**
+     * Register a service with the service registry
+     * @param serviceName The name of the service
+     * @param address The address of the service
+     * @return
+     */
     @PostMapping("/register")
     public String registerService(@RequestParam String serviceName, @RequestParam String address) {
         serviceRegistry.registerService(serviceName, address);
         return "Service registered successfully";
     }
 
+    /**
+     * Discover services registered with the service registry
+     * @param serviceName The name of the service
+     * @return  The addresses of the service instances
+     */
     @GetMapping("/discover")
     public List<String> discoverService(@RequestParam String serviceName) {
         return serviceRegistry.discoverService(serviceName);
     }
 
+    /**
+     * Keep a service alive
+     * @param address The address of the service
+     * @return
+     */
     @PostMapping("/heartbeat")
     public String keepAlive(@RequestParam String address) {
         serviceRegistry.keepAlive(address);

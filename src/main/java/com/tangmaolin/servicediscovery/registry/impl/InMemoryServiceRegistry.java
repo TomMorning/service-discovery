@@ -17,6 +17,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.stream.Collectors;
 
+/**
+ * In-memory service registry implementation
+ */
 @Component
 @Qualifier("inMemoryServiceRegistry")
 public class InMemoryServiceRegistry implements ServiceRegistry {
